@@ -20,8 +20,12 @@ var app=express();
 
 //View Engine
 app.set('views',path.join(__dirname,'views'));
-app.engine('handlebars',exphbs({defaultLayout:'layout'}));
-app.set('view engine','handlebars');
+app.engine('handlebars',exphbs({extname:'handlebars',defaultLayout:'layout', layoutsDir:'views/layouts'}));
+ // engine named as handlebars
+app.set('view engine','handlebars'); // setting the view engine to what its named
+/*so we have set handlebar files with extension .handlebars which will be present in the views folder
+and the default handlebar file will be layout.handlebars i.e. response to get('/') request 
+until we dont overwrite it */
 
 //Middleware
 app.use(bodyParser.json());

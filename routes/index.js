@@ -3,7 +3,7 @@ var router=express.Router();
 
 //Get Homepage
 router.get('/',function(req,res){
-	res.render('index');
+	res.render('index',{title:': Dashboard'});
 });
 
 module.exports=router;
